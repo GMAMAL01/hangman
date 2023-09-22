@@ -1,0 +1,339 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+    position: relative;
+}
+.gameInfo div span {
+     color: #222;
+    font-weight: bold;
+}
+div.content {
+    margin: 0 10%;
+}
+div.gameInfo {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+div.gameField{
+    padding: 20px;
+    border-top: 4px solid gray;
+    border-bottom: 4px solid gray;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+div.portrait{
+    background-color: #eee;
+    flex: 1;
+    position: relative;
+    max-width: 800px;
+    min-height: 238px;
+}
+div.portrait .stand, .pole, .shelf {
+    background-color: #222;
+    position: relative;
+
+}
+.stand{
+    top:99%;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-100px);
+    height: 4px;
+}
+.pole{
+    bottom: 0%;
+    left: 50%;
+    width: 4px;
+    height: 300px;
+}
+.shelf{
+    left: 50%;
+    height: 4px;
+    width: 100px;
+    bottom: 98%;
+}
+.shelf::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    right:  0;
+    top: 0;
+    background-color: #222;
+}
+
+footer{
+    color: #222;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    background-color: #eee;
+}
+.rope{
+    position: absolute;
+    border: #222 4px dashed;
+    width: 50px;
+    height: 50px;
+    left: calc(50% + 75px);
+    top: 30px;
+    border-radius: 50%;
+}
+.head{
+    position: absolute;
+    border: #222 4px solid;
+    width: 40px;
+    height: 40px;
+    left: calc(50% + 80px);
+    top: 35px;
+    border-radius: 50%;
+}
+.body{
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    left: calc(50% + 99px);
+    top: 75px;
+    background-color: #222;
+}
+.rightHand{
+    position: absolute;
+    width: 4px;
+    height: 70px;
+    left: calc(50% + 117px);
+    top: 95px;
+    transform: rotate(-30deg);
+    background-color: #222;
+}
+.leftHand{
+    position: absolute;
+    width: 4px;
+    height: 70px;
+    left: calc(50% + 81px);
+    top: 95px;
+    transform: rotate(30deg);
+    background-color: #222;
+}
+.leftLeg{
+    position: absolute;
+    width: 4px;
+    height: 70px;
+    left: calc(50% + 81px);
+    top: 169px;
+    transform: rotate(30deg);
+    background-color: #222;
+}
+.rightLeg{
+    position: absolute;
+    width: 4px;
+    height: 70px;
+    left: calc(50% + 117px);
+    top: 169px;
+    transform: rotate(-30deg);
+    background-color: #222;
+}
+.littersBox{
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.littersBox span:hover{
+    box-shadow: -2px -1px 9px #353434;
+    font-size: larger;
+}
+.littersBox span{
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 5px;
+    width:50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+}
+div.chosenWord{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+span.litter{
+    background-color: #eeeeee7d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:20px ;
+    width: 40px;
+    height: 40px;
+    border-bottom: #222 solid 2px;
+}
+span.clicked{
+   background-color: rgba(128, 128, 128, 0.731);
+   pointer-events: none;
+   opacity: 0;
+}
+.portrait div{
+    display: none;
+}
+@media (max-width: 999px) {
+    div.portrait{
+        width: 100%;
+        flex: none;
+    }
+    div.gameField{
+        gap: 20px;
+        justify-content: center;
+    }
+}
+@media (max-width: 500px) { 
+.littersBox span {
+    width: 40px;
+    height: 40px;
+}
+.stand{
+    width: 180px;
+}
+.pole{
+    height: 230px;
+}
+.shelf{
+    width: 70px;
+}
+.rope{
+    width: 40px;
+    height: 40px;
+    left: calc(50% + 49px);
+}
+.head{
+    width: 35px;
+    height: 35px;
+    left: calc(50% + 52px);
+    top: 32px;
+}
+.body{
+    left: calc(50% + 68px);
+    top: 69px;
+}
+.rightHand{
+    left: calc(50% + 87px);
+}
+.leftHand{
+    left: calc(50% + 49px); 
+}
+.leftLeg{
+    left: calc(50% + 51px);
+    top: 162px;
+}
+.rightLeg{
+    left: calc(50% + 86px);
+    top: 163px;
+}
+}
+@media (max-width: 419px) { 
+    .littersBox span {
+        width: 30px;
+        height: 30px;
+    }
+    div.gameField {
+        padding: 10px;
+    }
+    
+div.gameInfo {
+    padding: 7px;
+}
+.game-bar p {
+    margin: 7px;
+}
+}
+.congrat{
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+}
+.congrat p span{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.widge{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 5px;
+    display: none;
+    
+}
+.widge p{
+    background-color: rgba(128, 128, 128, 0.112);
+    padding: 5px;
+}
+.widge form{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.widge form label{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.widge form > input {
+    width: 60px;
+    height: 25px;
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 5px;
+    margin: 2px auto;
+    text-transform: capitalize;
+}
+.game-bar{
+    width: 100%;
+    text-align: center;
+
+}
+.game-bar div{
+    width: 300px;
+    height: 10px;
+    background-color: white;
+    border:1px solid;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.game-bar div span{
+    height: 100%;
+    display: block;
+    background-color: black;
+    width: 0;
+    transition: .4s;
+}
